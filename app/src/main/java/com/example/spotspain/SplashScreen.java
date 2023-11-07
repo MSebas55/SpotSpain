@@ -28,7 +28,7 @@ public class SplashScreen extends AppCompatActivity {
         Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         appNameSplash.startAnimation(fadeAnimation);
 
-        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake);
+        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.sequential);
         logoSplash.startAnimation(shakeAnimation);
     }
 
@@ -41,6 +41,6 @@ public class SplashScreen extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
-        }, 3000);
+        }, 3500);
     }
 }
