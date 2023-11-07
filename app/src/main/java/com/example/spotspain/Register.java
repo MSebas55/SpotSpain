@@ -28,6 +28,7 @@ public class Register extends AppCompatActivity {
 
     }
     public void insertValues(View v) {
+        //comentario para hacer commit
         TextView nameTextView = findViewById(R.id.usuarioreg);
         TextView emailTextView = findViewById(R.id.mailreg);
 
