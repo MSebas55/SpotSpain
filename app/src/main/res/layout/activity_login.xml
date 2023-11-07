@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:backgroundTint="@color/crema"
+        android:onClick="changeToInicio"
         android:text="Iniciar Sesión"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +56,7 @@
         app:startIconDrawable="@drawable/ic_persona">
 
         <EditText
+            android:id="@+id/userlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
@@ -77,6 +79,7 @@
         app:startIconDrawable="@drawable/ic_llave">
 
         <EditText
+            android:id="@+id/passlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/crema"

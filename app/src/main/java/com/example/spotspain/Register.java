@@ -27,10 +27,6 @@ public class Register extends AppCompatActivity {
         titulo.startAnimation(zoomAnimation);
 
     }
-    public void changeToLogin(View view) {
-        Intent nIntent = new Intent(Register.this, Login.class);
-        startActivity(nIntent);
-    }
     public void insertValues(View v) {
         TextView nameTextView = findViewById(R.id.usuarioreg);
         TextView emailTextView = findViewById(R.id.mailreg);
@@ -57,6 +53,7 @@ public class Register extends AppCompatActivity {
             }
             db.close();
         }
-
+        Intent nIntent = new Intent(Register.this, Login.class);
+        startActivity(nIntent);
     }
 }
