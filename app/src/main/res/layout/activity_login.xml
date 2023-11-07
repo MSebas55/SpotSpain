@@ -7,6 +7,20 @@
     android:background="#000000"
     tools:context=".Login">
 
+    <Button
+        android:id="@+id/iniciar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/crema"
+        android:text="Iniciar Sesión"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputLogin" />
+
     <ImageView
         android:id="@+id/logoLogin"
         android:layout_width="wrap_content"
@@ -24,7 +38,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/classicaldiary"
         android:text="@string/app_name"
-        android:textColor="@color/white"
+        android:textColor="@color/crema"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,10 +57,11 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#990000"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:backgroundTint="@color/crema"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,18 +79,35 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#980000"
+            android:background="@color/crema"
             android:hint="Password"
             android:inputType="textPassword"
+            android:searchResultHighlightColor="@color/white"
             android:textColor="@color/white" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/passwordInputLogin" />
-
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textoregistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="¿No tiene una cuenta? Regístrese "
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="0dp"/>
+
+    <TextView
+        android:id="@+id/textoregistro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="AQUÍ"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLogin"
+        app:layout_constraintStart_toEndOf="@id/textoregistro"
+        android:onClick="changeToRegister"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
