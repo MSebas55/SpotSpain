@@ -5,11 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
-
-import androidx.annotation.Nullable;
-
 public class DatabaseAux extends SQLiteOpenHelper {
-    private static final String DB_NAME = "Fountain&Go";
+    private static final String DB_NAME = "SpotSpain";
     private static final int DB_VERSION = 1;
     public DatabaseAux(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -29,4 +26,3 @@ public class DatabaseAux extends SQLiteOpenHelper {
 
     }
 }
-
