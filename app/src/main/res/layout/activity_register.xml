@@ -73,6 +73,7 @@
         app:startIconDrawable="@drawable/ic_persona">
 
         <EditText
+            android:id="@+id/usuarioreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/crema"
@@ -94,6 +95,7 @@
         app:startIconDrawable="@drawable/ic_correo">
 
         <EditText
+            android:id="@+id/mailreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/crema"
@@ -114,6 +116,7 @@
         app:startIconDrawable="@drawable/ic_llave">
 
         <EditText
+            android:id="@+id/passreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/crema"
@@ -128,8 +131,9 @@
         android:id="@+id/botonreg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Registrarse"
         android:backgroundTint="@color/dark_gray"
+        android:onClick="insertValues"
+        android:text="Registrarse"
         app:layout_constraintBottom_toTopOf="@+id/h3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
