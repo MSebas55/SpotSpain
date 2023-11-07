@@ -5,11 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
-
 public class DatabaseAux extends SQLiteOpenHelper {
     private static final String DB_NAME = "SpotSpain";
     private static final int DB_VERSION = 1;
-    private static final String TABLE_CUENTAS = "t_cuentas";
     public DatabaseAux(@Nullable Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -17,11 +15,10 @@ public class DatabaseAux extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_CUENTAS +
+        db.execSQL("CREATE TABLE users " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "name TEXT NOT NULL," +
-                "email TEXT NOT NULL," +
-                "pass TEXT NOT NULL)" );
+                "name VARCHAR(25) NOT NULL," +
+                "email VARCHAR(25) NOT NULL)");
     }
 
     @Override
