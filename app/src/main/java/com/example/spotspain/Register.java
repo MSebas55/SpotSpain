@@ -28,6 +28,7 @@ public class Register extends AppCompatActivity {
 
     }
     public void insertValues(View v) {
+        //no deja pulleaar
         TextView nameTextView = findViewById(R.id.usuarioreg);
         TextView emailTextView = findViewById(R.id.mailreg);
 
