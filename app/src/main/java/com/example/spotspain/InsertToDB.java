@@ -27,24 +27,28 @@ public class InsertToDB extends AppCompatActivity {
 
     public void insertValues(View v) {
         TextView nameTextView = findViewById(R.id.insertName);
-        TextView emailTextView = findViewById(R.id.insertEmail);
+        TextView emailTextView = findViewById(R.id.insertPass);
+        TextView passTextView = findViewById(R.id.insertPass);
 
         String nameString = nameTextView.getText().toString();
         String emailString = emailTextView.getText().toString();
+        String passString = emailTextView.getText().toString();
 
         DatabaseAux aux = new DatabaseAux(InsertToDB.this);
         SQLiteDatabase db = aux.getWritableDatabase();
 
-        if(db != null && !nameString.isEmpty() && !emailString.isEmpty()) {
+        if(db != null && !nameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()) {
             ContentValues values = new ContentValues();
             values.put("name", nameString);
             values.put("email", emailString);
+            values.put("email", passString);
 
-            long res = db.insert("users", null, values);
+            long res = db.insert("TABLE_CUENTAS", null, values);
             if(res >= 0) {
                 Toast.makeText(this, "Insertado correctamente", Toast.LENGTH_LONG).show();
                 nameTextView.setText("");
                 emailTextView.setText("");
+                passTextView.setText("");
             }
             else {
                 Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();

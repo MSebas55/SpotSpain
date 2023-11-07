@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changeToShow(View view) {
-        Intent nIntent = new Intent(MainActivity.this, Show.class);
+        Intent nIntent = new Intent(MainActivity.this, Update.class);
         startActivity(nIntent);
     }
 
