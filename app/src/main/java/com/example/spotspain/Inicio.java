@@ -19,6 +19,7 @@ public class Inicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+        showElements();
     }
     public void changeToLogin(View view) {
         Intent intent = new Intent(Inicio.this, Login.class);
@@ -38,7 +39,10 @@ public class Inicio extends AppCompatActivity {
 
                 TextView data = new TextView(this);
                 Button b = new Button(this);
-                b.setText("hola");
+                data.setText("Nombre: " + name + " Email: " + email);
+
+                b.setText("Eliminar Campo");
+                data.getResources().getColor(R.color.white);
                 b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -50,7 +54,6 @@ public class Inicio extends AppCompatActivity {
 
                     }
                 });
-                data.setText("Nombre: " + name + " Email: " + email);
                 layout.addView(data);
                 layout.addView(b);
             }while(cursor.moveToNext());

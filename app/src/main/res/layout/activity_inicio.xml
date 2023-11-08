@@ -23,8 +23,8 @@
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="219dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/dark_gray"
+        android:layout_height="300dp"
+        android:background="@color/dark_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -38,4 +38,5 @@
             android:backgroundTint="@color/white">
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
