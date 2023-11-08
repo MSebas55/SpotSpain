@@ -27,8 +27,12 @@ public class Register extends AppCompatActivity {
         titulo.startAnimation(zoomAnimation);
 
     }
+    public void changeToInicio(View view) {
+        Intent intent = new Intent(Register.this, Inicio.class);
+        startActivity(intent);
+    }
     public void insertValues(View v) {
-        //no deja pulleaar
+
         TextView nameTextView = findViewById(R.id.usuarioreg);
         TextView emailTextView = findViewById(R.id.mailreg);
 
