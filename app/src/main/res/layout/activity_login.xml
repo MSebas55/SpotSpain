@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:backgroundTint="@color/crema"
+        android:backgroundTint="@color/dark_gray"
         android:onClick="changeToInicio"
         android:text="Iniciar Sesión"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,7 +61,6 @@
             android:layout_height="wrap_content"
             android:hint="Username"
             android:inputType="textPersonName"
-            android:textColor="@color/white"
             android:backgroundTint="@color/crema"
             />
 

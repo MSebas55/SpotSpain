@@ -78,8 +78,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/crema"
             android:hint="Usuario"
-            android:inputType="textPersonName"
-            android:textColor="@color/white" />
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,8 +99,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/crema"
             android:hint="Correo"
-            android:inputType="textPersonName"
-            android:textColor="@color/white" />
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,8 +120,7 @@
             android:background="@color/crema"
             android:hint="Contraseña"
             android:inputType="textPassword"
-            android:searchResultHighlightColor="@color/white"
-            android:textColor="@color/white" />
+            android:searchResultHighlightColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,5 +135,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/h4" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark_gray"
+        android:text="Ir a Inicio"
+        android:onClick="changeToInicio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/h3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
