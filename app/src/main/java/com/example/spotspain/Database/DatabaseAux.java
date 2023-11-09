@@ -21,7 +21,8 @@ public class DatabaseAux extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE users " +
                 "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "name VARCHAR(25) NOT NULL," +
-                "email VARCHAR(25) NOT NULL)");
+                "email VARCHAR(25) NOT NULL," +
+                "pass VARCHAR(25) NOT NULL)");
     }
 
     @Override
