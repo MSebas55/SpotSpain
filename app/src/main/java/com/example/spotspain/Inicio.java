@@ -42,7 +42,6 @@ public class Inicio extends AppCompatActivity {
                 data.setText("Nombre: " + name + " Email: " + email);
 
                 b.setText("Eliminar Campo");
-                data.getResources().getColor(R.color.white);
                 b.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

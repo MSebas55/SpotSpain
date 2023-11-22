@@ -2,6 +2,9 @@ package com.example.spotspain;
 
         import androidx.appcompat.app.AppCompatActivity;
 
+        import android.annotation.SuppressLint;
+        import android.app.AlertDialog;
+        import android.content.DialogInterface;
         import android.content.Intent;
         import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
@@ -14,12 +17,31 @@ package com.example.spotspain;
         import com.example.spotspain.Database.DatabaseAux;
 
 public class Login extends AppCompatActivity {
-
+    public TextView forgotPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        forgotPassword = (TextView) findViewById(R.id.forgotPasswordText);
+        forgotPassword.setOnClickListener(view -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("¿Olvidaste tu contraseña?")
+                    .setMessage("Puedes recuperarla a través de tu correo electrónico.")
+                    //.setView(taskEditText)
 
+                    // Specifying a listener allows you to take an action before dismissing the dialog.
+                    // The dialog is automatically dismissed when a dialog button is clicked.
+                    .setPositiveButton(android.R.string.search_go, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Continue with delete operation
+                        }
+                    })
+
+                    // A null listener allows the button to dismiss the dialog and take no further action.
+                    .setNegativeButton(android.R.string.no, null)
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        });
     }
 
     public void changeToRegister(View view) {
@@ -30,34 +52,5 @@ public class Login extends AppCompatActivity {
     public void changeToInicio(View view) {
         Intent intent = new Intent(Login.this, Inicio.class);
         startActivity(intent);
-    }
-    void iniciarsesion() {
-        TextView nameView = findViewById(R.id.userlog);
-        SQLiteDatabase db = new DatabaseAux(this).getReadableDatabase();
-
-        Cursor cursor = db.rawQuery("SELECT * FROM users", null);
-
-        if(cursor.moveToFirst()) {
-            do {
-                int id = cursor.getInt(0);
-                String name = cursor.getString(1);
-                String email = cursor.getString(2);
-
-                TextView data = new TextView(this);
-                Button b = new Button(this);
-                b.setText("hola");
-                b.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // Toast.makeText(v.getContext(), name, Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(Login.this, Inicio.class);
-                        intent.putExtra("message_key", name);
-                        startActivity(intent);
-
-                    }
-                });
-            }while(cursor.moveToNext() || cursor.equals(nameView));
-        }
-        db.close();
     }
 }

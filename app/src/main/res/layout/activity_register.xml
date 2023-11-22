@@ -34,7 +34,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/classicaldiary"
         android:text="SpotSpain"
-        android:textColor="@color/crema"
         android:textSize="180px"
         app:layout_constraintBottom_toTopOf="@+id/h2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +55,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:text="Registro:"
-        android:textColor="@color/crema"
         android:textSize="70px"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/h2" />
@@ -76,7 +74,6 @@
             android:id="@+id/usuarioreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/crema"
             android:hint="Usuario"
             android:inputType="textPersonName" />
 
@@ -97,7 +94,6 @@
             android:id="@+id/mailreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/crema"
             android:hint="Correo"
             android:inputType="textPersonName" />
 
@@ -117,10 +113,8 @@
             android:id="@+id/passreg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/crema"
             android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:searchResultHighlightColor="@color/white" />
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,7 +122,6 @@
         android:id="@+id/botonreg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/dark_gray"
         android:onClick="insertValues"
         android:text="Registrarse"
         app:layout_constraintBottom_toTopOf="@+id/h3"
@@ -140,7 +133,6 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/dark_gray"
         android:text="Ir a Inicio"
         android:onClick="changeToInicio"
         app:layout_constraintBottom_toBottomOf="parent"
