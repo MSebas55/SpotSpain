@@ -4,21 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
     tools:context=".SplashScreen">
-
-    <TextView
-        android:id="@+id/appNameSplash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-30dp"
-        android:fontFamily="@font/classicaldiary"
-        android:text="@string/app_name"
-        android:textSize="50sp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@id/v2"
-        app:layout_constraintStart_toStartOf="@id/v1"
-        app:layout_constraintTop_toBottomOf="@id/logoSplash"></TextView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v1"
@@ -33,6 +19,25 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/fondosplash"
+            android:scaleType="fitXY"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_theme_light_background"
+            android:alpha="0.5"/>
+
+        <!-- 1 opaco - 0 transparente -->
+    </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h1"
@@ -51,5 +56,17 @@
         app:layout_constraintEnd_toEndOf="@id/v2"
         app:layout_constraintStart_toStartOf="@id/v1"
         app:srcCompat="@drawable/icono" />
+    <TextView
+        android:id="@+id/appNameSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:fontFamily="@font/classicaldiary"
+        android:text="@string/app_name"
+        android:textSize="50sp"
+        android:textColor="#2D6B27"
+        app:layout_constraintEnd_toEndOf="@id/v2"
+        app:layout_constraintStart_toStartOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/logoSplash"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
