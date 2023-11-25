@@ -61,4 +61,17 @@
     <color name="md_theme_dark_surfaceTint">#B4D26A</color>
     <color name="md_theme_dark_outlineVariant">#45483C</color>
     <color name="md_theme_dark_scrim">#000000</color>
+    <color name="light_black">#151515</color>
+    <color name="midnight_express">#232942</color>
+    <color name="black">#FF000000</color>
+    <color name="red">#F44336</color>
+    <color name="yellow">#FFC107</color>
+    <color name="grayInput">#B6B4B3</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="lightGray">#ECEEEF</color>
+    <color name="blueMozzafiato">#598392</color>
+    <color name="grayMozzafiato">#262626</color>
+    <color name="governor_bay">#598392</color>
+    <color name="wistful">#598392</color>
+    <color name="snuff">#598392</color>
 </resources>
