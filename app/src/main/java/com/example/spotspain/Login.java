@@ -11,6 +11,8 @@ package com.example.spotspain;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.Button;
+        import android.widget.EditText;
+        import android.widget.LinearLayout;
         import android.widget.TextView;
         import android.widget.Toast;
 
@@ -49,8 +51,34 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void changeToInicio(View view) {
-        Intent intent = new Intent(Login.this, Inicio.class);
-        startActivity(intent);
+    public void checkUser(View v) {
+        EditText nameEditText = findViewById(R.id.inputuser);
+        EditText passwordEditText = findViewById(R.id.inputpassword);
+
+        String nameString = nameEditText.getText().toString();
+        String passString = passwordEditText.getText().toString();
+
+        DatabaseAux aux = new DatabaseAux(Login.this);
+        SQLiteDatabase db = aux.getReadableDatabase();
+
+        if (db != null) {
+            String[] columns = {"name"};
+            String selection = "name = ? AND pass = ?";
+            String[] selectionArgs = {nameString, passString};
+
+            Cursor cursor = db.query("users", columns, selection, selectionArgs, null, null, null);
+
+            if (cursor != null) {
+                if (cursor.getCount() > 0) {
+                    Toast.makeText(this, "Iniciando sesión", Toast.LENGTH_LONG).show();
+                    Intent nIntent = new Intent(Login.this,Inicio.class);
+                    startActivity(nIntent);
+                } else {
+                    Toast.makeText(this, "usuario o la contraseña estan mal introducidos.", Toast.LENGTH_LONG).show();
+                }
+                cursor.close();
+            }
+            db.close();
+        }
     }
 }

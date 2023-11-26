@@ -1,5 +1,7 @@
 package com.example.spotspain;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.example.spotspain.Database.DatabaseAux;
 
 /**
  * A simple {@link Fragment} subclass.

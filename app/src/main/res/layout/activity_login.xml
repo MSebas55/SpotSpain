@@ -51,6 +51,7 @@
         >
 
         <EditText
+            android:id="@+id/inputuser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Username"
@@ -72,6 +73,7 @@
         >
 
         <EditText
+            android:id="@+id/inputpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -99,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="@id/loginGLV2"
         android:layout_marginTop="10dp"
         android:text="Iniciar Sesión"
-        android:onClick="changeToInicio"
+        android:onClick="checkUser"
         />
 
     <Button
