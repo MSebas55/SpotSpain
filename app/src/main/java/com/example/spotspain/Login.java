@@ -53,10 +53,10 @@ public class Login extends AppCompatActivity {
 
     public void checkUser(View v) {
         EditText nameEditText = findViewById(R.id.inputuser);
-        EditText passwordEditText = findViewById(R.id.inputpassword);
+        EditText passEditText = findViewById(R.id.inputpassword);
 
         String nameString = nameEditText.getText().toString();
-        String passString = passwordEditText.getText().toString();
+        String passString = passEditText.getText().toString();
 
         DatabaseAux aux = new DatabaseAux(Login.this);
         SQLiteDatabase db = aux.getReadableDatabase();
