@@ -71,6 +71,8 @@ public class Login extends AppCompatActivity {
             if (cursor != null) {
                 if (cursor.getCount() > 0) {
                     Toast.makeText(this, "Iniciando sesión", Toast.LENGTH_LONG).show();
+                    nameEditText.setText("");
+                    passEditText.setText("");
                     Intent nIntent = new Intent(Login.this,Inicio.class);
                     startActivity(nIntent);
                 } else {
