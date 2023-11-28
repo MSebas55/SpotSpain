@@ -12,6 +12,7 @@
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:layout_margin="8dp"
+      android:backgroundTint="@color/md_theme_dark_primary"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintBottom_toTopOf="@id/h1"
@@ -26,7 +27,7 @@
       <!-- Media -->
       <ImageView
           android:layout_width="match_parent"
-          android:layout_height="50dp"
+          android:layout_height="70dp"
           app:srcCompat="@drawable/fondosplash"
           android:scaleType="centerCrop"
           android:contentDescription="Descripción"
@@ -40,9 +41,8 @@
         <!-- Title, secondary and supporting text -->
         <TextView
             android:id="@+id/titulolugar"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="40dp"
             android:text="MADRID"
             android:textAppearance="?attr/textAppearanceTitleMedium" />
 
@@ -53,7 +53,8 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_margin="8dp"
-          android:orientation="horizontal">
+          android:orientation="horizontal"
+          android:gravity="center">
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

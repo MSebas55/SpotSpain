@@ -17,6 +17,11 @@ package com.example.spotspain;
         import android.widget.Toast;
 
         import com.example.spotspain.Database.DatabaseAux;
+        import com.example.spotspain.Database.User;
+        import com.google.firebase.firestore.FirebaseFirestore;
+
+        import java.util.HashMap;
+        import java.util.Map;
 
 public class Login extends AppCompatActivity {
     public TextView forgotPassword;
@@ -49,6 +54,17 @@ public class Login extends AppCompatActivity {
     public void changeToRegister(View view) {
         Intent intent = new Intent(Login.this, Register.class);
         startActivity(intent);
+    }
+    public void checkLogIn(View view){
+        EditText userLoginEdittext = findViewById(R.id.inputuser);
+        EditText passwordLoginEdittext = findViewById(R.id.inputpassword);
+
+        String usernameString = userLoginEdittext.getText().toString();
+        String passwordString = passwordLoginEdittext.getText().toString();
+
+        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
+        Map<String, User> users = new HashMap<>();
+        firestoreDb.collection("Usuarios").document();
     }
 
     public void checkUser(View v) {

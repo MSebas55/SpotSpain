@@ -1,5 +1,6 @@
 package com.example.spotspain;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -14,8 +15,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.spotspain.Database.DatabaseAux;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.example.spotspain.Database.User;
+
+import java.util.HashMap;
+import java.util.Map;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class Register extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +45,6 @@ public class Register extends AppCompatActivity {
         startActivity(intent);
     }
     public void insertValues(View v) {
-
         TextView nameTextView = findViewById(R.id.usuarioreg);
         TextView emailTextView = findViewById(R.id.mailreg);
         TextView passTextView = findViewById(R.id.passreg);
@@ -66,5 +77,40 @@ public class Register extends AppCompatActivity {
         }
         Intent nIntent = new Intent(Register.this, Login.class);
         startActivity(nIntent);
+
+
+    }
+    public void signUpNewUser(View v){
+        TextView nameTextView = findViewById(R.id.usuarioreg);
+        TextView emailTextView = findViewById(R.id.mailreg);
+        TextView passTextView = findViewById(R.id.passreg);
+
+        String nameString = nameTextView.getText().toString();
+        String emailString = emailTextView.getText().toString();
+        String passString = passTextView.getText().toString();
+
+        //FirebaseApp.initializeApp(this);
+        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
+        Map<String, User> Usuarios = new HashMap<>();
+        User u = new User();
+        u.name = nameString;
+        u.email = emailString;
+        u.password = passString;
+        Usuarios.put(nameString,u);
+        firestoreDb.collection("Usuarios").document()
+                .set(Usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Log.d("DEBUG", "TODO OK");
+                        Intent toLobby = new Intent(Register.this, Inicio.class);
+                        toLobby.putExtra("username", nameString);
+                        startActivity(toLobby);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("ERROR", e.getMessage());
+                    }
+                });
     }
 }

@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="@id/loginGLV2"
         android:layout_marginTop="10dp"
         android:text="Iniciar Sesión"
-        android:onClick="checkUser"
+        android:onClick="checkLogIn"
         />
 
     <Button
