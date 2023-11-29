@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="morado_oscuro">#572364</color>
+    <color name="moradito">#e0e0e0e0</color>
     <color name="seed">#95aa61</color>
     <color name="md_theme_light_primary">#4E6704</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>

@@ -11,7 +11,7 @@
         android:id="@+id/gradientRegister"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
+        android:background="@drawable/gradientperfil"
         />
 
     <ImageView
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textColor="#2D6B27"
+        android:textColor="@color/morado_oscuro"
         app:layout_constraintTop_toBottomOf="@id/logoLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="@id/loginGLV2"
         android:layout_marginTop="10dp"
         android:text="Iniciar Sesión"
-        android:onClick="checkUser"
+        android:onClick="checkLogIn"
         />
 
     <Button
@@ -110,7 +110,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@color/md_theme_dark_primary"
+        android:backgroundTint="@color/moradito"
         android:onClick="changeToRegister"
         android:text="Registrarse"
         app:layout_constraintEnd_toEndOf="@id/loginGLV2"
@@ -127,6 +127,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp"
+        android:textColor="@color/moradito"
         />
 
     <androidx.constraintlayout.widget.Guideline

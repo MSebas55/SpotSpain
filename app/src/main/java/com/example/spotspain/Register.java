@@ -57,7 +57,7 @@ public class Register extends AppCompatActivity {
         u.email = emailString;
         u.password = passString;
         Usuarios.put(nameString,u);
-        firestoreDb.collection("Usuarios").document()
+        firestoreDb.collection("Usuarios").document(u.name)
                 .set(Usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {

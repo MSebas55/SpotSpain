@@ -24,6 +24,7 @@ package com.example.spotspain;
         import com.google.firebase.auth.AuthResult;
         import com.google.firebase.auth.FirebaseAuth;
         import com.google.firebase.auth.FirebaseUser;
+        import com.google.firebase.firestore.DocumentSnapshot;
         import com.google.firebase.firestore.FirebaseFirestore;
 
         import java.util.HashMap;
@@ -63,18 +64,10 @@ public class Login extends AppCompatActivity {
         editTextPassword = findViewById(R.id.inputpassword);
         buttonLogin = findViewById(R.id.loginButton);
 
-        /*buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email = editTextUser.getText().toString();
-                String password = editTextPassword.getText().toString();
-                signIn(email, password);
-            }
-        });*/
     }
 
     public void changeToRegister(View view) {
-        Intent intent = new Intent(Login.this, SearchActivity.class);
+        Intent intent = new Intent(Login.this, Register.class);
         startActivity(intent);
     }
     public void checkUser(View v) {
@@ -109,21 +102,51 @@ public class Login extends AppCompatActivity {
             db.close();
         }
     }
-    /*private void signIn(String email, String password) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+    public void checkLogIn(View view) {
+
+        EditText userLoginEditText = (EditText) findViewById(R.id.inputuser);
+        EditText passwordLoginEditText = (EditText) findViewById(R.id.inputpassword);
+
+
+        String usernameString = userLoginEditText.getText().toString();
+        String passwordString = passwordLoginEditText.getText().toString();
+
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+        // Referencia al documento del usuario por su nombre de usuario
+        db.collection("Usuarios").document(usernameString)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
-                            // Inicio de sesión exitoso
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(Login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-                            // Puedes redirigir a otra actividad o realizar otras acciones aquí
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // El documento existe, puedes acceder al campo "username"
+                                String namebase = document.getString("name");
+
+                                // Comparar el usernameString con el usernameFromDatabase
+                                if (usernameString.equals(namebase)) {
+                                    // Los nombres de usuario coinciden
+                                    Toast.makeText(Login.this, "Bienvenido", Toast.LENGTH_SHORT).show();
+                                    Intent nIntent = new Intent(Login.this, Inicio.class);
+                                    startActivity(nIntent);
+                                } else {
+                                    // Los nombres de usuario no coinciden
+                                    Toast.makeText(Login.this, "El usuario o contraseña son incorrectos"+ " " + namebase, Toast.LENGTH_SHORT).show();
+                                    Intent nIntent = new Intent(Login.this, Inicio.class);
+                                    startActivity(nIntent);
+                                }
+                            } else {
+                                // El documento no existe
+                                Toast.makeText(Login.this, "Error en el inicio de sesión", Toast.LENGTH_SHORT).show();
+                            }
                         } else {
-                            // Si falla el inicio de sesión, muestra un mensaje al usuario
-                            Toast.makeText(Login.this, "Error en el inicio de sesión", Toast.LENGTH_SHORT).show();
+                            // Error al obtener el documento
+                            Toast.makeText(Login.this, "Error al encontrar el documento", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
-      }*/
+    }
 }

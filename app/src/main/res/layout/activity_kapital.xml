@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Kapital">
+    tools:context=".Kapital"
+    >
 
     <!-- Encabezado con el nombre del lugar y botón de volver -->
     <RelativeLayout
@@ -79,6 +80,7 @@
         android:textSize="20sp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/moradito"
         android:justificationMode="inter_word"
         android:text="La discoteca Kapital Madrid es una de las discotecas de la capital madrileña con mayor popularidad tanto a nivel nacional como internacional, ya que ofrece experiencias únicas y fiestas de lo más increíbles a cada uno de sus visitantes. Este antiguo teatro, es ahora una macrodiscoteca compuesta por 7 plantas y con una capacidad para más de 3.000 personas situada en pleno corazón de Madrid y en una de las zonas más turísticas de la capital, concretamente en la calle de Atocha."/>
 
@@ -88,6 +90,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextDescription"
-        android:text="VER EN MAPS" />
+        android:text="VER EN MAPS"
+        android:textColor="@color/morado_oscuro"
+        android:backgroundTint="@color/moradito"/>
 
 </RelativeLayout>

@@ -2,10 +2,12 @@
 
     <item android:title="Inicio"
         android:icon="@drawable/ic_baseline_home_24"
-        android:id="@+id/home"/>
+        android:id="@+id/home"
+        android:iconTint="@color/moradito"/>
     <item android:title="Buscar"
         android:icon="@drawable/ic_baseline_search_24"
-        android:id="@+id/search"/>
+        android:id="@+id/search"
+        android:iconTint="@color/moradito"/>
     <item android:title="Perfil"
         android:icon="@drawable/ic_baseline_person_24"
         android:id="@+id/profile"/>
