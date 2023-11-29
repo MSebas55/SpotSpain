@@ -15,6 +15,24 @@
         android:theme="@style/Theme.SpotSpain"
         tools:targetApi="31">
         <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActiviy"
+            android:exported="false" />
+        <activity
+            android:name=".Kapital"
+            android:exported="false" />
+        <activity
+            android:name=".Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".Database.Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".Principal"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity

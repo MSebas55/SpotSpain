@@ -3,4 +3,22 @@
     <string name="watermark">SpotSpain by Sebastian Calimandruc</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="Provincia">
+        <item>Madrid</item>
+        <item>Barcelona</item>
+        <item>Murcia</item>
+        <item>Valencia</item>
+    </string-array>
+    <string-array name="Municipio">
+        <item>Madrid</item>
+        <item>Torrejón de Ardoz</item>
+        <item>Alcalá de Henares</item>
+        <item>Arganda del Rey</item>
+    </string-array>
+    <string-array name="Interes">
+        <item>Restaurantes</item>
+        <item>Iglesias</item>
+        <item>Museos</item>
+        <item>Discotecas / Pubs</item>
+    </string-array>
 </resources>
