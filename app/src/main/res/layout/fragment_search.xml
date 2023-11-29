@@ -5,12 +5,282 @@
     android:layout_height="match_parent"
     tools:context=".SearchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Primer Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buscar"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/kapital"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen 1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kapital"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:onClick="iraKapital"/>
+
+            <TextView
+                android:id="@+id/textViewDescription1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="La discoteca Kapital Madrid es una de las discotecas de la capital madrileña con... "/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Segundo Card -->
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/samsara"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen 2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Samsara"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewDescription2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Esta mítica sala, ha experimentado una profunda transformación para convertirse..."/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Tercer Card -->
+    <LinearLayout
+        android:layout_marginTop="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/shoko"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen 2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Shoko"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewDescription3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fiestas privadas, desfiles de moda y eventos en espacioso club de diseño con discoteca y sala de conciertos."/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Cuarto Card -->
+    <LinearLayout
+        android:layout_marginTop="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/tyffanys"
+            android:scaleType="centerCrop"
+            android:contentDescription="Imagen 2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiffany´s"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewDescription4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Las fiestas más elegantes, divertidas y exclusivas, con la personalidad inconfundible de Tiffany´s."/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Quinto Card -->
+    <LinearLayout
+        android:layout_marginTop="400dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Imagen 2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/opium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opium"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewDescription5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Discoteca exclusiva, con zona VIP y un DJ residente que pincha éxitos de música dance.."/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Sexto Card -->
+    <LinearLayout
+        android:layout_marginTop="500dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView6"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Imagen 2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/panda_club" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Panda Club"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewDescription6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Este club esta ubicado en las inmediaciones de La Castellana, en la calle Hernani 75, una zona perfecta..."/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Septimo Card -->
+    <LinearLayout
+        android:layout_marginTop="600dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#e0e0e0">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/imageView7"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Imagen 2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/barcelo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Barceló"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textViewDescription7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Teatro Barceló es, sin duda alguna, la discoteca con más historia de la ciudad y una parada obligatoria en..."/>
+        </LinearLayout>
+    </LinearLayout>
 
 </FrameLayout>

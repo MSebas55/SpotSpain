@@ -1,5 +1,6 @@
 package com.example.spotspain;
 
+        import androidx.annotation.NonNull;
         import androidx.appcompat.app.AppCompatActivity;
 
         import android.annotation.SuppressLint;
@@ -18,6 +19,11 @@ package com.example.spotspain;
 
         import com.example.spotspain.Database.DatabaseAux;
         import com.example.spotspain.Database.User;
+        import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.Task;
+        import com.google.firebase.auth.AuthResult;
+        import com.google.firebase.auth.FirebaseAuth;
+        import com.google.firebase.auth.FirebaseUser;
         import com.google.firebase.firestore.FirebaseFirestore;
 
         import java.util.HashMap;
@@ -25,6 +31,9 @@ package com.example.spotspain;
 
 public class Login extends AppCompatActivity {
     public TextView forgotPassword;
+    private EditText editTextUser, editTextPassword;
+    private Button buttonLogin;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,24 +58,25 @@ public class Login extends AppCompatActivity {
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
         });
+        mAuth = FirebaseAuth.getInstance();
+        editTextUser = findViewById(R.id.inputuser);
+        editTextPassword = findViewById(R.id.inputpassword);
+        buttonLogin = findViewById(R.id.loginButton);
+
+        /*buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = editTextUser.getText().toString();
+                String password = editTextPassword.getText().toString();
+                signIn(email, password);
+            }
+        });*/
     }
 
     public void changeToRegister(View view) {
-        Intent intent = new Intent(Login.this, Register.class);
+        Intent intent = new Intent(Login.this, SearchActivity.class);
         startActivity(intent);
     }
-    public void checkLogIn(View view){
-        EditText userLoginEdittext = findViewById(R.id.inputuser);
-        EditText passwordLoginEdittext = findViewById(R.id.inputpassword);
-
-        String usernameString = userLoginEdittext.getText().toString();
-        String passwordString = passwordLoginEdittext.getText().toString();
-
-        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
-        Map<String, User> users = new HashMap<>();
-        firestoreDb.collection("Usuarios").document();
-    }
-
     public void checkUser(View v) {
         EditText nameEditText = findViewById(R.id.inputuser);
         EditText passEditText = findViewById(R.id.inputpassword);
@@ -99,4 +109,21 @@ public class Login extends AppCompatActivity {
             db.close();
         }
     }
+    /*private void signIn(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Inicio de sesión exitoso
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(Login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
+                            // Puedes redirigir a otra actividad o realizar otras acciones aquí
+                        } else {
+                            // Si falla el inicio de sesión, muestra un mensaje al usuario
+                            Toast.makeText(Login.this, "Error en el inicio de sesión", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+      }*/
 }
