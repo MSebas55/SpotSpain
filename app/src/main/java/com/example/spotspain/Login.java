@@ -20,12 +20,17 @@ package com.example.spotspain;
         import com.example.spotspain.Database.DatabaseAux;
         import com.example.spotspain.Database.User;
         import com.google.android.gms.tasks.OnCompleteListener;
+        import com.google.android.gms.tasks.OnSuccessListener;
         import com.google.android.gms.tasks.Task;
         import com.google.firebase.auth.AuthResult;
         import com.google.firebase.auth.FirebaseAuth;
         import com.google.firebase.auth.FirebaseUser;
         import com.google.firebase.firestore.DocumentSnapshot;
         import com.google.firebase.firestore.FirebaseFirestore;
+        import com.google.firebase.firestore.QueryDocumentSnapshot;
+        import com.google.firebase.firestore.QuerySnapshot;
+
+        import org.w3c.dom.Text;
 
         import java.util.HashMap;
         import java.util.Map;
@@ -35,11 +40,13 @@ public class Login extends AppCompatActivity {
     private EditText editTextUser, editTextPassword;
     private Button buttonLogin;
     private FirebaseAuth mAuth;
+    FirebaseFirestore firestoreDB = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         forgotPassword = (TextView) findViewById(R.id.forgotPasswordText);
+        show();
         forgotPassword.setOnClickListener(view -> {
             new AlertDialog.Builder(this)
                     .setTitle("¿Olvidaste tu contraseña?")
@@ -148,5 +155,23 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    public void show() {
+        LinearLayout cubo = findViewById(R.id.cubo);
+        firestoreDB.collection("Usuarios").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot list) {
+                for (QueryDocumentSnapshot document:list) {
+                    TextView texto = new TextView(Login.this);
+                    texto.setTextSize(25);
+                    texto.setText(document.get("name").toString());
+                    cubo.addView(texto);
+                    if (document.get("name").toString().equals("alberto")) {
+                        Toast.makeText(Login.this, "Estoy dentro", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            }
+        });
     }
 }

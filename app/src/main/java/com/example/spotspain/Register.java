@@ -51,28 +51,16 @@ public class Register extends AppCompatActivity {
 
         //FirebaseApp.initializeApp(this);
         FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
-        Map<String, User> Usuarios = new HashMap<>();
-        User u = new User();
-        u.name = nameString;
-        u.email = emailString;
-        u.password = passString;
-        Usuarios.put(nameString,u);
-        firestoreDb.collection("Usuarios").document(u.name)
-                .set(Usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.d("ERROR", e.getMessage());
-                    }
-                });
+        Map<String, String> Usuarios = new HashMap<>();
+        Usuarios.put("name", nameString);
+        Usuarios.put("email", emailString);
+        Usuarios.put("password", passString);
+        firestoreDb.collection("Usuarios").document(nameString).set(Usuarios);
 
         DatabaseAux aux = new DatabaseAux(Register.this);
         SQLiteDatabase db = aux.getWritableDatabase();
 
-        if(db != null && !nameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()) {
+       if(db != null && !nameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()) {
             ContentValues values = new ContentValues();
             values.put("name", nameString);
             values.put("email", emailString);
